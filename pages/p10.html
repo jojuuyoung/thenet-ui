@@ -1,0 +1,308 @@
+<style>
+    img{
+        width: 100%;
+        max-width: 500px;
+    }
+    .flex-container{
+        background-color: DodgerBlue;
+        display: flex; /*플렉스 선언*/
+        flex-wrap: nowrap; /*컨테이너 너비에 따른 아이템 줄바꿈 속성 기본값*/
+    }
+    
+    .flex-item{
+        background-color: #f1f1f1;
+        margin: 5px;
+        text-align: center;
+        font-size: 30px;
+        flex-basis: 30px;
+    }
+
+    .box{
+        border: 2px solid #222;
+        height: 300px;
+        display: flex; 
+        flex-wrap: wrap; /*줄바꿈*/
+        justify-content: space-around; /*수평 정렬*/
+        align-content: space-around; /*2줄이상 여러 줄 사이의 간격 정렬*/
+    }
+    .item{
+        background-color: dimgrey;
+        box-sizing: border-box;
+        padding: 30px;
+        text-align: center;
+        flex-basis: 30%; /*아이템 기본 너비*/
+    }
+    .menu-wrap{
+        background-color: lightskyblue;
+        height: 80px;
+        display: flex;
+        flex-direction: row; /*정렬방향 설정*/
+        align-items: center; /*수직정렬*/
+        justify-content: space-between; /*수평정렬*/
+    }
+    .logo{
+        border: 1px solid #222;
+        box-sizing: border-box;
+        height: 50px;
+    }
+    .menu{
+        display: flex;
+    }
+    .menuitem{
+        text-align: center;
+        border: 1px solid #222;
+        /*flex: 1; /*1 1 auto*/
+    }
+    .login{
+        border: 1px solid #222;
+        box-sizing: border-box;
+        height: 30px;
+    }
+    .wrap{
+        border: 2px solid #222;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .boxbox{
+        border: 1px solid #222;
+        box-sizing: border-box;
+        width: 50%;
+    }
+    .boxbox:nth-child(1){
+        width: 100%;
+    }
+
+    .self{
+        background-color: darkslateblue;
+        height: 300px;
+        display: flex;
+    }
+    .selfbox{
+        background-color: floralwhite;
+        padding: 10px;
+        margin: 5px;
+    }
+    .selfbox:nth-child(1){
+        align-self: flex-start;
+    }
+    .selfbox:nth-child(2){
+        align-self: flex-end;
+    }
+    .selfbox:nth-child(3){
+        align-self: center;
+    }
+
+
+</style>
+
+    <h3>flex box</h3>
+    <p class="sub-txt">
+        flexbox는 정렬하려는 요소의 부모 요소인 flex container , 자식 요소인 flex item 로 구성<br>
+        flexbox는 정렬하려는 자식요소의 부모 요소에 dispaly: flex 속성을 선언<br><br>
+        부모요소와 자식요소에 정의 하는 속성 구분<br>
+        <img src="img/flex.PNG" alt="속성 이미지">
+    </p>
+    <p>기본 dispaly:flex; 선언</p>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+    </div>
+    
+    <pre class="brush:js; /* javascript 지정 */ first-line:1; /* 시작 라인 번호 지정 */ html-script:true;/* HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */ tab-size:2;	/* 탭 사이즈 변경 */ toolbar:false;	/* 툴바 표시 지정 */ pad-line-numbers:true;	/* 라인번호 앞에 0을 채움. */" >
+        &lt;div class=&quot;flex-container&quot;&gt;
+            &lt;div class=&quot;flex-item&quot;&gt;1&lt;/div&gt;
+            &lt;div class=&quot;flex-item&quot;&gt;2&lt;/div&gt;
+            &lt;div class=&quot;flex-item&quot;&gt;3&lt;/div&gt;
+            &lt;div class=&quot;flex-item&quot;&gt;4&lt;/div&gt;
+            &lt;div class=&quot;flex-item&quot;&gt;5&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;style&gt;
+        .flex-container{
+            background-color: firebrick;
+            display: flex; /*플렉스 선언*/
+            flex-wrap: nowrap; /*컨테이너 너비에 따른 아이템 줄바꿈 속성 기본값*/
+        }
+        
+        .flex-item{
+            background-color: floralwhite;
+            padding: 50px;
+            margin: 5px;
+        }
+        &lt;/style&gt;
+    </pre>
+
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+    <pre class="brush:js; /* javascript 지정 */ first-line:1; /* 시작 라인 번호 지정 */ html-script:true;/* HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */ tab-size:2;	/* 탭 사이즈 변경 */ toolbar:false;	/* 툴바 표시 지정 */ pad-line-numbers:true;	/* 라인번호 앞에 0을 채움. */" >
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;4&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;5&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;6&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;7&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;8&lt;/div&gt;
+            &lt;div class=&quot;item&quot;&gt;9&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;style&gt;
+        .box{
+            border: 2px solid #222;
+            width: 100%;
+            height: 100%;
+            display: flex; /*플렉스 선언*/
+            flex-wrap: wrap; /*줄바꿈*/
+            justify-content: space-around; /*수평정렬*/
+            align-content: space-around; /*2줄이상 수직정렬*/
+        }
+        .item{
+            background-color: dimgrey;
+            box-sizing: border-box;
+            padding: 30px;
+            text-align: center;
+            flex-basis: 30%; /*아이템 기본 너비*/
+        }
+        &lt;/style&gt;
+    </pre>
+
+    <div class="menu-wrap">
+        <div class="logo">logo</div>
+        <ul class="menu">
+            <li class="menuitem">menu1</li>
+            <li class="menuitem">menu2</li>
+            <li class="menuitem">menu3</li>
+            <li class="menuitem">menu4</li>
+        </ul>
+        <div class="login">로그인</div>
+    </div>
+    <pre class="brush:js; /* javascript 지정 */ first-line:1; /* 시작 라인 번호 지정 */ html-script:true;/* HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */ tab-size:2;	/* 탭 사이즈 변경 */ toolbar:false;	/* 툴바 표시 지정 */ pad-line-numbers:true;	/* 라인번호 앞에 0을 채움. */" >
+        &lt;div class=&quot;menu-wrap&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;logo&lt;/div&gt;
+            &lt;ul class=&quot;menu&quot;&gt;
+                &lt;li class=&quot;menuitem&quot;&gt;menu1&lt;/li&gt;
+                &lt;li class=&quot;menuitem&quot;&gt;menu2&lt;/li&gt;
+                &lt;li class=&quot;menuitem&quot;&gt;menu3&lt;/li&gt;
+                &lt;li class=&quot;menuitem&quot;&gt;menu4&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;login&quot;&gt;로그인&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;style&gt;
+            .menu-wrap{
+                background-color: lightskyblue;
+                height: 80px;
+                display: flex;
+                flex-direction: row; /*정렬방향 설정*/
+                align-items: center; /*수직정렬*/
+                justify-content: space-between; /*수평정렬*/
+            }
+            .logo{
+                border: 1px solid #222;
+                box-sizing: border-box;
+                height: 50px;
+            }
+            .menu{
+                display: flex;
+            }
+            .menuitem{
+                text-align: center;
+                border: 1px solid #222;
+                /*flex: 1; /*1 1 auto*/
+            }
+            .login{
+                border: 1px solid #222;
+                box-sizing: border-box;
+                height: 30px;
+            }
+        &lt;/style&gt;
+        
+    </pre>
+    
+    <div class="wrap">
+        <div class="boxbox">꽉차고</div>
+        <div class="boxbox">왼쪽박스</div>
+        <div class="boxbox">오른쪽박스</div>
+    </div>
+    <pre class="brush:js; /* javascript 지정 */ first-line:1; /* 시작 라인 번호 지정 */ html-script:true;/* HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */ tab-size:2;	/* 탭 사이즈 변경 */ toolbar:false;	/* 툴바 표시 지정 */ pad-line-numbers:true;	/* 라인번호 앞에 0을 채움. */" >
+        &lt;div class=&quot;wrap&quot;&gt;
+            &lt;div class=&quot;boxbox&quot;&gt;꽉차고&lt;/div&gt;
+            &lt;div class=&quot;boxbox&quot;&gt;왼쪽박스&lt;/div&gt;
+            &lt;div class=&quot;boxbox&quot;&gt;오른쪽박스&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;style&gt;
+            .wrap{
+                border: 2px solid #222;
+                width: 500px;
+                height: 200px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .boxbox{
+                border: 1px solid #222;
+                box-sizing: border-box;
+                width: 50%;
+            }
+            .boxbox:nth-child(1){
+                width: 100%;
+            }
+        &lt;/style&gt;
+    </pre>
+
+    <div class="self">
+        <div class="selfbox">위</div>
+        <div class="selfbox">아래</div>
+        <div class="selfbox">중간</div>
+        <div class="selfbox">기본적으로 flex의 아이템은 컨테이너 높이에 맞게 들어가려는 속성을 가지고 있음</div>
+    </div>
+    <pre class="brush:js; /* javascript 지정 */ first-line:1; /* 시작 라인 번호 지정 */ html-script:true;/* HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */ tab-size:2;	/* 탭 사이즈 변경 */ toolbar:false;	/* 툴바 표시 지정 */ pad-line-numbers:true;	/* 라인번호 앞에 0을 채움. */" >
+        &lt;div class=&quot;self&quot;&gt;
+            &lt;div class=&quot;selfbox&quot;&gt;위&lt;/div&gt;
+            &lt;div class=&quot;selfbox&quot;&gt;아래&lt;/div&gt;
+            &lt;div class=&quot;selfbox&quot;&gt;중간&lt;/div&gt;
+            &lt;div class=&quot;selfbox&quot;&gt;기본적으로 flex의 아이템은 컨테이너 높이에 맞게 들어가려는 속성을 가지고 있음&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;style&gt;
+        .self{
+            background-color: darkslateblue;
+            height: 300px;
+            display: flex;
+        }
+        .selfbox{
+            background-color: floralwhite;
+            padding: 10px;
+            margin: 5px;
+        }
+        .selfbox:nth-child(1){
+            align-self: flex-start;
+        }
+        .selfbox:nth-child(2){
+            align-self: flex-end;
+        }
+        .selfbox:nth-child(3){
+            align-self: center;
+        }
+        &lt;/style&gt;
+
+    </pre>
+
+<script>
+    $(document).ready(function(){
+      
+    })
+</script>
